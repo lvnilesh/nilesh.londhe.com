@@ -10,7 +10,7 @@ image = "/images/hello-world.jpg"
 
 Welcome to my blog! This is my very first post here on nilesh.londhe.com.
 
-![Hello World](https://images.unsplash.com/photo-1506459225024-1428097a2e88?w=1200&h=600&fit=crop)
+![Hello World](https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=600&fit=crop)
 
 ## What's Next?
 
