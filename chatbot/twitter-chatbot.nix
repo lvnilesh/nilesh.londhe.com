@@ -1,11 +1,12 @@
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   cfg = config.services.twitter-chatbot;
   chatbotDir = "/home/cloudgenius/services/twitter-chatbot";
-in
-
-{
+in {
   options.services.twitter-chatbot = {
     enable = lib.mkEnableOption "Twitter Chatbot API Server";
     port = lib.mkOption {
@@ -18,8 +19,8 @@ in
   config = lib.mkIf cfg.enable {
     systemd.services.twitter-chatbot = {
       description = "Twitter Chatbot API Server";
-      wantedBy = [ "multi-user.target" ];
-      after = [ "network.target" ];
+      wantedBy = ["multi-user.target"];
+      after = ["network.target"];
       serviceConfig = {
         Type = "simple";
         User = "cloudgenius";
@@ -31,6 +32,6 @@ in
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ cfg.port ];
+    networking.firewall.allowedTCPPorts = [cfg.port];
   };
 }
